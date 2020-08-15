@@ -13,6 +13,13 @@ def call() {
                     }
                 }
             }
+            post {
+                always {
+                    script {
+                        deleteDir()
+                    }
+                }
+            }
         }
     }
 }
