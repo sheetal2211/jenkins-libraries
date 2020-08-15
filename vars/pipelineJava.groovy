@@ -1,7 +1,7 @@
 def call() {
     pipeline {
         agent any
-        option {
+        options {
             disableConcurrentBuilds()
             buildDiscarder logRotator(numToKeepStr: '10', daysToKeepStr: '2')
         }
