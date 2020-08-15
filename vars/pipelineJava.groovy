@@ -13,6 +13,30 @@ def call() {
                     }
                 }
             }
+
+            stage('Sonar Full Scan'){
+                when {
+                    anyOf{
+                        expression { env.BRANCH_NAME == 'master'}
+                    }
+                }
+                steps{
+                    script{
+                        echo 'Full analysis'
+                    }
+                }
+            }
+
+            stage('Merge Analysis Scan'){
+                when {
+                    branch 'PR-*'
+                }
+                steps{
+                    script{
+                        echo 'Merge analysis'
+                    }
+                }
+            }
         }
         post {
             always {
