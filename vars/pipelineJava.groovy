@@ -13,11 +13,11 @@ def call() {
                     }
                 }
             }
-            post {
-                always {
-                    script {
-                        deleteDir()
-                    }
+        }
+        post {
+            always {
+                script {
+                    deleteDir()
                 }
             }
         }
